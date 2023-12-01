@@ -1,0 +1,49 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.blog-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.blog-header h1 {
+    color: #333;
+}
+
+.blog-header p {
+    color: #666;
+}
+
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.blog-content p {
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Ajoutez des animations selon vos préférences */
+.blog-container, .blog-content, .blog-header {
+    transition: transform 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+.blog-container:hover {
+    transform: scale(1.05);
+}

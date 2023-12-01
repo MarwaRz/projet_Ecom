@@ -1,0 +1,101 @@
+<!--<div class="container mt-5">
+    <div class="card p-3">
+        <div class="row">
+            <div class="col-6">
+
+                <form #orderForm="ngForm" (ngSubmit)="placeOrder(orderForm)">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Name </mat-label>
+                        <input matInput 
+                        placeholder="Full Name"
+                        [(ngModel)]="orderDetails.fullName"
+                        name="fullName">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Adress</mat-label>
+                        <input matInput 
+                        placeholder="Full address"
+                        [(ngModel)]="orderDetails.fullAddress"
+                        name="fullAddress">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Contact Number</mat-label>
+                        <input matInput 
+                        placeholder="Contact number"
+                        [(ngModel)]="orderDetails.contactNumber"
+                        name="contactNumber">
+                    </mat-form-field> 
+               
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Time </mat-label>
+                        <input matInput 
+                        placeholder="Alternate contact number"
+                        [(ngModel)]="orderDetails.alternateContactNumber"
+                        name="alternateContactNumber">
+                    </mat-form-field>
+
+                   
+                    <select [(ngModel)]="surfaceId" (change)="calculateSum()" name="surface" class="w-100">
+                        <option [ngValue]="0" >Sélectionnez une surface</option>
+                        <option [ngValue]="300" >entre 100²-300m²</option>
+                        <option [ngValue]="4">entre 400²-500m²</option>
+                      </select>
+                      
+                      <select [(ngModel)]="interventionId" (change)="calculateSum()" name="intervention" class="w-100">
+                        <option [ngValue]="0">Sélectionnez une intervention</option>
+                        <option [ngValue]="250">Intervention 1</option>
+                        <option [ngValue]="500">Intervention 2</option>
+                      </select>
+                      
+                      <select [(ngModel)]="prestationId" (change)="calculateSum()" name="prestation" class="w-100">
+                        <option [ngValue]="0">Sélectionnez une prestation</option>
+                        <option [ngValue]="300">Prestation 1</option>
+                        <option [ngValue]="500">Prestation 2</option>
+                      </select>
+
+                      <select [(ngModel)]="employeId" name="employe" class="w-100" (change)="onSelectionChange()" multiple>
+                        <option *ngFor="let item of userservice.listData" [ngValue]="item.userFirstName">{{ item.userFirstName }}</option>
+                      </select>
+                      
+                      <p>La somme est : {{ somme }}</p>
+                   
+                    <div align="right">
+                        <button type="submit" mat-stroked-button color="primary">ok</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-6">
+                <table class="table">
+                    <thead class="thead">
+                        <tr>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        <tr *ngFor="let product of productDetails">
+                            <td>{{product.productName}}</td>
+                           
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Total</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+-->

@@ -1,0 +1,130 @@
+
+  
+
+    <div class="service">
+        <div class="container">
+          <div class="section-header">
+            <h2>Nuestros Servicios</h2>
+          </div>
+      
+          <div class="row">
+            <div class="col-lg-4 col-md-4" *ngFor="let p of productDetails" >
+              <div class="service-item">
+                <div class="b1">
+                  <img style="height: 240px; width: 354px;" [src]="p.productImages[0].url" alt="">
+                  <h3>{{p.productName}}</h3>
+                  <p>{{p.description| truncate:155}}</p>
+                </div>
+                <a class="btn" (click)="showProductDetails(p.productId)">Aprende más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
+    
+
+
+     <div class="price" *ngFor="let p of profiles">
+        <div class="container">
+            <div class="section-header">
+                <h2>Plan de precios</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="price-item">
+                        <div class="price-header">
+                            <div class="price-icon">
+                                <i class="fa fa-home"></i>
+                            </div>
+                            <div class="price-title">
+                                <h2>Estándar</h2>
+                            </div>
+                            <div class="price-pricing">
+                                <h3><small>$</small>{{p.standard}}</h3>
+                            </div>
+                        </div>
+                        <div class="price-body">
+                            <div class="price-des">
+                                <ul>
+                                    <li>Limpieza de 3 dormitorios</li>
+                                    <li>Limpieza de 2 baños</li>
+                                    <li>Limpieza de 1 sala de estar</li>
+                                    <li>Limpieza con aspiradora</li>
+                                    <li>Dentro de 6 horas</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="price-footer">
+                            <div class="price-action">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="price-item featured-item">
+                        <div class="price-header">
+                            <div class="price-icon">
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="price-title">
+                                <h2>Premium</h2>
+                            </div>
+                            <div class="price-pricing">
+                                <h3><small>$</small>{{p.premium}}</h3>
+                            </div>
+                        </div>
+                        <div class="price-body">
+                            <div class="price-des">
+                                <ul>
+                                    <li>Limpieza de 5 dormitorios</li>
+                                    <li>Limpieza de 3 baños</li>
+                                    <li>Limpieza de 2 salas de estar</li>
+                                    <li>Limpieza con aspiradora</li>
+                                    <li>Dentro de 6 horas</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="price-footer">
+                            <div class="price-action">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="price-item">
+                        <div class="price-header">
+                            <div class="price-icon">
+                                <i class="fa fa-gift"></i>
+                            </div>
+                            <div class="price-title">
+                                <h2>Empresa</h2>
+                            </div>
+                            <div class="price-pricing">
+                                <h3><small>$</small>{{p.entreprise}}</h3>
+                            </div>
+                        </div>
+                        <div class="price-body">
+                            <div class="price-des">
+                                <ul>
+                                    <li>Limpieza de 8 dormitorios</li>
+                                    <li>Limpieza de 5 baños</li>
+                                    <li>Limpieza de 3 salas de estar</li>
+                                    <li>Limpieza con aspiradora</li>
+                                    <li>Dentro de 12 horas</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="price-footer">
+                            <div class="price-action">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+</div>
+<app-footer></app-footer>   
+ <a href="servicios" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

@@ -1,0 +1,32 @@
+
+
+  
+  
+
+  
+  <form (ngSubmit) = "onSubmit()" class="form-container">
+    
+
+    <h3>Actualizar Reservas</h3>
+    <br>
+
+    <mat-form-field appearance="outline" style="width: 400px">
+      <mat-label>Estado de su Reserva</mat-label>
+      <input matInput placeholder="Estado de su Reserva"
+      [(ngModel)]="reservation.status" name = "status"
+      >
+  </mat-form-field>
+        
+  <mat-form-field appearance="outline" style="width: 400px;">
+    <mat-label>Somu de su Reserva</mat-label>
+    <input matInput placeholder="Somu de su Reserva"
+    [(ngModel)]="reservation.total" name = "total"
+    >
+  </mat-form-field>
+  
+  
+   
+      <button style="width: 400px;" mat-stroked-button color="primary" class="submit-button" type ="submit">modificar</button>
+  
+    </form>
+    <app-footer></app-footer>

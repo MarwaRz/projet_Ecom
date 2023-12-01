@@ -1,0 +1,15 @@
+.butt{
+    font-size: 20px;
+width: 300px;
+height: 45px;
+
+box-shadow: 0px 0px 10px rgba(18, 169, 245, 0.3); /* Add a shadow with some transparency */
+}
+.card{
+    margin-left: 450px;
+    margin-top: -70px;
+    width: 300px;
+}
+.titre{
+    margin-left: 390px;
+}

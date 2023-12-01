@@ -1,0 +1,21 @@
+<div class="compte">
+<div *ngIf="user">
+    <h2>Su Información</h2>
+    <p>Nombre de Usuario : {{ user.userName }}</p>
+    <p>Número de Teléfono : {{ user.userFirstName}}</p>
+    <p>Dirección : {{ user.userLastName }}</p>
+    <p>Email : {{ user.userEmail}}</p>
+   
+    <button color="primary" class="btn"  (click)= "updateProfile(user.userName)"   style="background-color: #FFD662; color: rgb(255, 255, 255);margin-right: 10px;">
+       Modificar su Información 
+    </button>
+    <button color="primary" class="btn"  (click)= "updateProfilePassword(user.userName)"   style="background-color: #FFD662; color: rgb(255, 255, 255);">
+      Modificar su Contraseña
+   </button>
+ 
+ 
+   </div>
+    <!-- Ajoutez d'autres détails d'utilisateur selon vos besoins -->
+  </div>
+  <app-footer></app-footer>
+  <a href="cuenta" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

@@ -1,0 +1,333 @@
+<section class="contact-section pt-40 pb-40">
+    <div class="price">
+        <div class="containerr">
+            <div class="section-header"><h2>Presupuesto para conocer las tarifas de los servicios de limpieza de locales</h2></div></div></div>
+    <div class="container">
+  
+      <div class="col-xl-10 offset-xl-1">
+      <div class="contact-form-wrapper">
+      <div class="row">
+      <div class="col-xl-10 col-lg-8 mx-auto">
+      <div class="section-title text-center mb-50">
+        
+      <h2 class="pb-15">Formulario para completar y encontrar una empresa de limpieza al mejor precio</h2>
+      <p>Todos los campos son obligatorios !</p>
+      
+
+      </div>
+      </div>
+      </div>
+      <form #blogForm="ngForm" (ngSubmit)="addBlog(blogForm)">
+        <input type="hidden" name="csrf_token" value="daa34f435dab3ce8ce5eed13d2baa316" />                                                                                            
+   
+      <div class="row mb-10">
+        <div class="col-md-5">
+          <p><span class="simu-icon"><i class="lni lni-support"></i> </span><span class="simu-label">Tipo de servicio deseado :</span><br><span class="simu-detail">La naturaleza del servicio o de los locales.</span></p>
+        </div>
+        <div class="col-md-7">
+            <select [(ngModel)]="surfaceId" (change)="calculateSum()" name="surface" class="form-select form-select-lg mb-3">
+
+                <option [ngValue]="0" >Seleccione una superficie</option>
+
+                <option [ngValue]="1">m²</option>
+                <option [ngValue]="2">Menos de 50 m²</option>
+                <option [ngValue]="3">De 50 a 100 m²</option>
+                <option [ngValue]="4">De 100 a 150 m²</option>
+                <option [ngValue]="5">De 150 a 300 m²</option>
+                <option [ngValue]="6">De 300 a 500 m²</option>
+                <option [ngValue]="7">De 500 a 1000 m²</option>
+                <option [ngValue]="8">De 1000 a 5000 m²</option>
+                <option [ngValue]="9">5000 m² y más</option>
+              </select>
+        </div>
+      </div>
+      <div class="row mb-10">
+        <div class="col-md-5">
+          <p><span class="simu-icon"><i class="lni lni-alarm-clock"></i> </span><span class="simu-label">Número de intervenciones por semana:
+         </span><br><span class="simu-detail">Corresponde al número de visitas que desea.
+
+            .</span></p>
+        </div>
+        <div class="col-md-7">
+            <select [(ngModel)]="interventionId" (change)="calculateSum()" name="intervention" class="form-select form-select-lg mb-3">
+                <option [ngValue]="0">Seleccione una intervención</option>
+                <option [ngValue]="1">Diario (5 veces por semana)</option>
+                <option [ngValue]="2">Varias veces por semana (2 a 3 veces por semana)</option>
+                <option [ngValue]="3">Una vez por semana (1 vez por semana)</option>
+                <option [ngValue]="4">Ocasional</option>
+              </select>
+        </div>
+      </div>
+      <div class="row mb-10">
+        <div class="col-md-5">
+          <p><span class="simu-icon"><i class="lni lni-apartment"></i> </span><span class="simu-label">
+            Superficie de sus locales en m2:
+<sup>2</sup> ?</span><br><span class="simu-detail">Todo incluido (oficinas, hall, pasillos, baños, ...).
+
+
+
+
+    .</span></p>
+        </div>
+        <div class="col-md-7">
+            <select [(ngModel)]="prestationId" (change)="calculateSum()" name="prestation" class="form-select form-select-lg mb-3">
+                                   
+                <option [ngValue]="0">Servicio</option>
+                <option [ngValue]="1">Limpieza de oficinas</option>
+                <option [ngValue]="2">Limpieza de comercios</option>
+                <option [ngValue]="3">Limpieza industrial</option>
+                <option [ngValue]="4">Limpieza de hotel / hospital / lugar de alojamiento</option>
+                <option [ngValue]="5">Limpieza de obra / siniestro / mudanza</option>
+                <option [ngValue]="6">Limpieza de edificio (mantenimiento de zonas comunes)</option>
+                <option [ngValue]="7">Limpieza de fachadas/ventanas exteriores</option>
+                <option [ngValue]="8">Mantenimiento de espacios verdes</option>
+                <option [ngValue]="9">Limpieza de estacionamiento</option>
+                <option [ngValue]="10">Desinfección</option>
+               
+               
+       
+              </select>
+        </div>
+      </div>
+      <div class="row mb-10">
+       
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Nombre de Usuario</mat-label>
+                        <input matInput 
+                        placeholder="Nombre de Usuario"
+                        [(ngModel)]="blog.nom" name="nom"
+                        minlength="8"  required   >
+                        <mat-error *ngIf="blogForm.controls['nom'].hasError('required')">Nombre de Usuario es obligatorio</mat-error>
+                        <mat-error *ngIf="blogForm.controls['nom'].hasError('minlength')">Nombre de Usuario debe tener al menos 6 caracteres</mat-error>            </mat-form-field>        </div>
+                <div class="col-md-6">
+        
+        
+        
+                   <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Número de Teléfono</mat-label>
+          <input matInput placeholder="Número de Teléfono"
+                 [(ngModel)]="blog.contact"
+                 name="contact"
+                 minlength="9"
+                 pattern="[+0-9][0-9]*"                 required>
+          <mat-error *ngIf="blogForm.controls['contact'].hasError('required')">Número de Teléfono es obligatorio</mat-error>
+          <mat-error *ngIf="blogForm.controls['contact'].hasError('minlength')">Número de Teléfono debe tener al menos 9 caracteres</mat-error>
+          <mat-error *ngIf="blogForm.controls['contact'].hasError('pattern')">Caracteres inválidos en el número de teléfono (0-9)</mat-error>
+        </mat-form-field>    
+                
+                
+                
+                </div><br><br>
+              
+                  <div class="col-md-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Dirección</mat-label>
+                        <input matInput placeholder="Dirección" [(ngModel)]="blog.adresse" name="adresse" minlength="10" required>
+                        <mat-error *ngIf="blogForm.controls['adresse'].hasError('required')">Dirección  es obligatorio</mat-error>
+                        <mat-error *ngIf="blogForm.controls['adresse'].hasError('minlength')">Dirección debe tener al menos 10 caracteres</mat-error>
+        
+                      </mat-form-field>
+                    
+                  </div>
+                  <div class="col-md-6">
+        
+        
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Fecha y Hora</mat-label>
+                        <input matInput type="date" [(ngModel)]="blog.date" name="date" required  pattern="\d{4}-\d{2}-\d{2}" (input)="onDateInput($event)">
+                        <mat-error *ngIf="blogForm.controls['date'].hasError('required')">Fecha es obligatoria</mat-error>
+                        <mat-error *ngIf="blogForm.controls['date'].hasError('invalidDate')">Fecha no válida</mat-error>
+                        <mat-error *ngIf="blogForm.controls['date'].hasError('minDate')">La fecha debe ser a partir de mañana</mat-error>  
+                              </mat-form-field>
+                    
+            
+        </div>
+        <div class="col-md-6">
+        
+        
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" [(ngModel)]="blog.email" name="email" required minlength="10"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                <mat-error *ngIf="blogForm.controls['email'].hasError('required')">Email es obligatoria</mat-error>
+                <mat-error *ngIf="blogForm.controls['email'].hasError('pattern')">Email no válida</mat-error>
+
+                      </mat-form-field>
+            
+    
+</div>
+        
+        
+        <div class="col-6">
+            <div>
+    
+                <div class="dropzone"
+                appDrag 
+                (files) = "fileDropped($event)">
+                    <div class="text-wrapper">
+                        <div class="center">
+                            <a (click)="selectFile.click()" style="color:blueviolet;
+                            font-weight: 600;
+                            cursor: pointer;">Seleccione imágenes</a></div>
+                        </div>
+                </div>
+                <h5 style="color: rgb(189, 32, 32); font-size: 14px;">Seleccione al menos una imagen (obligatorio).
+                </h5>
+    
+                <input multiple
+                type="file"
+                style="display: none;"
+                #selectFile  
+                value="select"
+                (change)="onFileSelected($event)">
+            </div>
+            <div class="mt-5">
+                <div class="row">
+                    <mat-grid-list cols="4" rowHeight="1:1">
+                        <mat-grid-tile *ngFor="let file of blog.image; let i = index;">
+                            <div style="position: relative">
+                                <span class="btn-remove-image" (click)="removeImages(i)">X</span>
+                                <img [src]="file.url" width="100px" height="100px">
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </div>
+            </div>
+            
+        </div>
+          <div class="button text-center">
+            <button type="submit" mat-stroked-button color="primary" [disabled]="blogForm.invalid" class="butt" >Guardar</button>
+          </div>      </div>
+      
+      <br>
+      <div class="row mb-10">
+       
+      </div>
+
+
+
+    
+
+
+
+
+   
+      </form>
+      
+      </div>
+      </div>
+    
+    </div>
+    </section>
+  
+
+            <!-- Pricing Plan Start -->
+            <div class="price" *ngFor="let p of profiles">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Plan de precios</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="price-item">
+                                <div class="price-header">
+                                    <div class="price-icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="price-title">
+                                        <h2>Estándar</h2>
+                                    </div>
+                                    <div class="price-pricing">
+                                        <h3><small>$</small>{{p.standard}}</h3>
+                                    </div>
+                                </div>
+                                <div class="price-body">
+                                    <div class="price-des">
+                                        <ul>
+                                            <li>Limpieza de 3 dormitorios</li>
+                                            <li>Limpieza de 2 baños</li>
+                                            <li>Limpieza de 1 sala de estar</li>
+                                            <li>Limpieza con aspiradora</li>
+                                            <li>Dentro de 6 horas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="price-footer">
+                                    <div class="price-action">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="price-item featured-item">
+                                <div class="price-header">
+                                    <div class="price-icon">
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="price-title">
+                                        <h2>Premium</h2>
+                                    </div>
+                                    <div class="price-pricing">
+                                        <h3><small>$</small>{{p.premium}}</h3>
+                                    </div>
+                                </div>
+                                <div class="price-body">
+                                    <div class="price-des">
+                                        <ul>
+                                            <li>Limpieza de 5 dormitorios</li>
+                                            <li>Limpieza de 3 baños</li>
+                                            <li>Limpieza de 2 salas de estar</li>
+                                            <li>Limpieza con aspiradora</li>
+                                            <li>Dentro de 6 horas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="price-footer">
+                                    <div class="price-action">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="price-item">
+                                <div class="price-header">
+                                    <div class="price-icon">
+                                        <i class="fa fa-gift"></i>
+                                    </div>
+                                    <div class="price-title">
+                                        <h2>Empresa</h2>
+                                    </div>
+                                    <div class="price-pricing">
+                                        <h3><small>$</small>{{p.entreprise}}</h3>
+                                    </div>
+                                </div>
+                                <div class="price-body">
+                                    <div class="price-des">
+                                        <ul>
+                                            <li>Limpieza de 8 dormitorios</li>
+                                            <li>Limpieza de 5 baños</li>
+                                            <li>Limpieza de 3 salas de estar</li>
+                                            <li>Limpieza con aspiradora</li>
+                                            <li>Dentro de 12 horas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="price-footer">
+                                    <div class="price-action">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-footer></app-footer>
+
+           
+
+
+
+
+            <a href="presupuesto_u" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+

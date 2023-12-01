@@ -1,0 +1,11 @@
+
+  .portfolio-item {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a shadow with some transparency */
+width: 350px;  
+}
+.portfolio-wrap{
+    margin-left: -15px;
+}
+.portfolio{
+  margin-left: 50px;
+}

@@ -1,0 +1,393 @@
+
+    <style>
+        .brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centre le contenu horizontalement */
+            text-align: center; /* Centre le texte horizontalement */
+        }
+    
+        .brand img .h3{
+            margin-bottom: 0px; /* Espace entre l'image et le texte */
+        }
+    </style>
+   
+
+
+
+   
+   <body>
+   
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+        <div class="wrapper">
+            <!-- Header Start -->
+            <div class="header home">
+                <div class="container-fluid">
+                    <div class="hero row align-items-center">
+                        
+                        <div class="col-md-7">
+                            <h2>Mejor & Confiable
+                                </h2>
+                            <h2><span>Servicio </span> de Limpieza</h2>
+                            <p>Tu Puerta de Entrada a un Espacio más Limpio y Brillante!</p>
+                            <a *ngIf="!isLoggedIn()" class="btn" href="/presupuesto">Pide Presupuesto ya!</a>
+                            <a *ngIf="isLoggedIn()" class="btn" href="/presupuesto_u">Pide Presupuesto ya!</a>
+
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+            <!-- Header End -->
+            
+        
+            <!-- About Start -->
+            <div class="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="about-img">
+                                <img src="assets/img/back2.jpg"  alt="Image" style="height: 350px ; width: 450px;">
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-6" >
+                            
+                            
+                            
+                            <div class="about-text">
+                                <h3  style="color: #00539C">Acerca de nosotros</h3>
+                                <p>
+
+                                    Bienvenido a ToDoClean, tu solución de limpieza de primera clase. Nos enorgullece transformar espacios en refugios inmaculados, ofreciendo servicios de limpieza personalizados tanto para necesidades residenciales como comerciales. Nuestro equipo experimentado garantiza una atención meticulosa a 
+                                    los detalles, y nuestro compromiso con la responsabilidad ambiental nos distingue             
+                                                   </p><p> En ToDoClean, creemos en el poder de la limpieza para mejorar el bienestar, la productividad y 
+                                                    la satisfacción general. Experimenta un nuevo nivel de limpieza con nosotros, donde la excelencia se encuentra con la impecabilidad. </p>
+
+                                                    <a class="btn" href="/sobre_nosotros">Aprende más</a>
+
+                                                </div>
+                            
+                            
+                            
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           <div class="service">
+  <div class="container">
+    <div class="section-header">
+      <h2>Nuestros Servicios</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-9 col-md-6">
+        <div class="d-flex">
+          <div *ngFor="let p of productDetails.slice(0,3)" style="margin-right: 10px;">
+            <div class="service-item">
+              <div class="b1">
+                <img style="height: 240px; width: 355px;" [src]="p.productImages[0].url" alt="">
+                <h3>{{p.productName}}</h3>
+                <p>{{p.description |  truncate:155 }}</p>
+              </div>
+              <a class="btn" (click)="showProductDetails(p.productId)">Aprende más</a>
+            </div>
+          </div>
+        </div>
+      </div>              <a class="lien" href="/servicios">Mostrar Todo
+      </a>
+
+    </div>
+  </div>
+</div>
+
+            <!-- Service End -->
+           
+            <div class="service">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Mantente actualizado sobre nuestro proyecto</h2>
+                    </div>
+                    <div class="row">
+
+
+
+
+                        
+                      
+                            <div class="col-lg-4 col-md-6 d-flex">
+                                <div *ngFor="let b of blogDetails.slice(0,3)"  style="margin-right: 10px;">
+                                    <div class="service-item">
+                                    <div class="b1">
+
+                                    <img  style="height: 250px; width: 355px;" [src]="b.blogImages[0].url" alt="">
+                                    <h3>{{b.blogName}}</h3>
+                                  
+                                    <p>
+                                        {{b.description | truncate:140 }}                               </p></div>
+                                    <a class="btn" (click)="showProjet(b.blogId)">Aprende más</a>
+                                </div></div>
+                           
+                        </div>
+                      
+                        <a class="lien" href="/proyectos">Mostrar Todo</a>
+                    </div> 
+                </div>
+            </div>
+            
+            
+      
+            
+            <!-- Team End -->
+
+
+            <!-- FAQs Start -->
+           
+            <!-- Pricing Plan Start -->
+            <div class="price" *ngFor="let p of profiles">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Ofrecemos tarifas razonables para nuestros servicios</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="price-item">
+                                <div class="price-header">
+                                    <div class="price-icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="price-title">
+                                        <h2>Estándar</h2>
+                                    </div>
+                                    <div class="price-pricing">
+                                        <h3><small>$</small>{{p.standard}}</h3>
+                                    </div>
+                                </div>
+                                <div class="price-body">
+                                    <div class="price-des">
+                                        <ul>
+                                            <li>Limpieza de 3 dormitorios</li>
+                                            <li>Limpieza de 2 baños</li>
+                                            <li>Limpieza de 1 sala de estar</li>
+                                            <li>Limpieza con aspiradora</li>
+                                            <li>Dentro de 6 horas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="price-footer">
+                                    <div class="price-action">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="price-item featured-item">
+                                <div class="price-header">
+                                    <div class="price-icon">
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="price-title">
+                                        <h2>Premium</h2>
+                                    </div>
+                                    <div class="price-pricing">
+                                        <h3><small>$</small>{{p.premium}}</h3>
+                                    </div>
+                                </div>
+                                <div class="price-body">
+                                    <div class="price-des">
+                                        <ul>
+                                            <li>Limpieza de 5 dormitorios</li>
+                                            <li>Limpieza de 3 baños</li>
+                                            <li>Limpieza de 2 salas de estar</li>
+                                            <li>Limpieza con aspiradora</li>
+                                            <li>Dentro de 6 horas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="price-footer">
+                                    <div class="price-action">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="price-item">
+                                <div class="price-header">
+                                    <div class="price-icon">
+                                        <i class="fa fa-gift"></i>
+                                    </div>
+                                    <div class="price-title">
+                                        <h2>Empresa</h2>
+                                    </div>
+                                    <div class="price-pricing">
+                                        <h3><small>$</small>{{p.entreprise}}</h3>
+                                    </div>
+                                </div>
+                                <div class="price-body">
+                                    <div class="price-des">
+                                        <ul>
+                                            <li>Limpieza de 8 dormitorios</li>
+                                            <li>Limpieza de 5 baños</li>
+                                            <li>Limpieza de 3 salas de estar</li>
+                                            <li>Limpieza con aspiradora</li>
+                                            <li>Dentro de 12 horas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="price-footer">
+                                    <div class="price-action">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!-- Newsletter Start -->
+            <div class="call-to-action">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-9">
+                            <h2>Presupuesto</h2>
+                            <p>
+                                Presupuesto para conocer las tarifas de los servicios de limpieza de locales
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <a *ngIf="!isLoggedIn()" class="btn" href="/presupuesto">Pide Presupuesto ya!</a>
+                            <a *ngIf="isLoggedIn()" class="btn" href="/presupuesto_u">Pide Presupuesto ya!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Newsletter End -->
+            
+            <!-- Testimonial Start -->
+                <div class="testimonial"  >
+                    <div class="section-header"  >
+                        <div >
+                        <h2>Lo que dicen los clientes sobre el servicio</h2>
+                    </div></div></div>
+                    <div class="comment-row ">
+                        <div class="comment-container" *ngFor="let c of commentaire.slice(0,6)">
+                          <div class="user-image-container">
+                              <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg" alt="Utilisateur 1" style="width: 50px; height: 50px; margin-right: 18px;" >
+                          </div>
+                          <div class="comment-content">
+                              <div class="comment-header">
+                                  <div class="user-info">
+                                      <div class="user-name">{{c.u?.userName}} </div>
+                                      <div class="comment-date">{{c.date}}</div>
+                                  </div>
+                                  <div class="rating">
+                                    <app-star-rating [rating]="+c.rate"></app-star-rating>
+                                  </div>
+                              </div>
+                      
+                              <div class="comment-text" >
+                                {{c.comment| truncate:35}}                        </div>
+                          </div>
+                      </div>                        <a class="lien" href="/opiniones">Mostrar Todo</a>
+        
+                    </div>
+            <!-- Testimonial End -->
+          
+            
+            <!-- Call to Action Start -->
+            <div class="call-to-action">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-9">
+                            <h2>Contáctenos</h2>
+                            <p>
+                                Contacto Para Cualquier Consulta                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <a class="btn" href="/contacto">Contáctenos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Call to Action End -->
+
+
+            <!-- Blog Start -->
+            <div class="blog">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>
+                            Mantente Actualizado(a) con Nuestro Blog
+                            </h2>
+                    </div>
+                    <div class="row">
+                      
+                            <div class="col-lg-4 col-md-6 d-flex">
+                                <div  *ngFor="let item of blog_Details.slice(0,3)"  style="margin-right: 10px;">
+                                    <div class="blog-item">
+                                    <div class="b11">
+
+                                    <img style="height: 250px; width: 355px;"  [src]="item.blogImages[0].url" alt="">
+                                    <h3>{{item.blogName}}</h3>
+                                    <div class="meta">
+                                        <i class="fa fa-list-alt"></i>
+                                        <a href="">{{item.type}}</a>
+                                        <i class="fa fa-calendar-alt"></i>
+                                        <p>{{item.date}}</p>
+                                    </div>
+                                    <p>
+                                        {{item.description | truncate:155  }}                           </p></div>
+                                        <div class="btn3">
+                                    <a class="btn"  (click)="showBlog(item.blogId)">Aprende más</a></div>
+                                </div></div>
+                           
+                        </div>
+                      
+                        <a class="lien" href="/blog">Mostrar Todo</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog End -->
+
+        </div>
+
+            <!-- Footer End -->
+            
+        
+
+
+
+
+
+
+<app-footer></app-footer>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    </body>

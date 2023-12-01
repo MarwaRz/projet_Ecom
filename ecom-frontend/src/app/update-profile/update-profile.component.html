@@ -1,0 +1,90 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Update Profile </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Nombre de la Empresa</mat-label>
+            <input matInput placeholder="Nombre de la Empresa"
+            [(ngModel)] = "profile.nom" name = "nom"
+            name="Nom">
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Número de teléfono</mat-label>
+            <input matInput placeholder="Número de teléfono"
+            [(ngModel)] = "profile.num" name = "num"
+            >
+        </mat-form-field>
+
+       
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email"
+            [(ngModel)] = "profile.email" name = "email"
+          >
+        </mat-form-field>
+       
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Dirección</mat-label>
+            <input matInput placeholder="ADirección"
+            [(ngModel)] = "profile.adresse" name = "adresse"
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Maps</mat-label>
+            <input matInput placeholder="maps"
+            [(ngModel)] = "profile.maps" name = "maps"
+          >
+        </mat-form-field>
+       
+      
+
+
+      
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Facebook</mat-label>
+            <input matInput placeholder="Facebook"
+            [(ngModel)] = "profile.fb" name = "fb"          >
+        </mat-form-field>
+
+
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Youtube</mat-label>
+            <input matInput placeholder="Youtube"
+            [(ngModel)] = "profile.youtube" name = "youtube"        >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Instagram</mat-label>
+            <input matInput placeholder="Instagram"
+            [(ngModel)] = "profile.insta" name = "insta"        >
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>"Precio Estándar</mat-label>
+            <input matInput placeholder="Precio Estándar"
+            [(ngModel)] = "profile.standard" name = "standard"       >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Precio Premium</mat-label>
+            <input matInput placeholder="Precio Premium"
+            [(ngModel)] = "profile.premium" name = "premium"        >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Precio Empresa</mat-label>
+            <input matInput placeholder="Precio Empresa"
+            [(ngModel)] = "profile.entreprise" name = "entreprise"       >
+        </mat-form-field>
+        
+   
+       
+    
+        <button class = "btn btn-success" type ="submit">Guardar</button>
+    
+    </form>
+    </div> 
+    <app-footer></app-footer>

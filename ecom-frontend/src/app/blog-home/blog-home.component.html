@@ -1,0 +1,35 @@
+
+            
+
+ <div class="testimonial"  >
+    <div class="section-header"  >
+        <div >
+        <h2 style="color: #00539C;">Nuestros Blogs</h2>
+    </div></div></div>
+<main>
+    <div class="blog-list" *ngFor="let b of blogDetails">
+        <div class="blog">
+            <div class="blog-item">
+                <div class="info">
+                    <div class="info2">
+
+                    <h2>{{b.blogName}}</h2>
+                    <p>{{b.date}}</p>
+                    <p>{{b.type}}</p>
+
+                    <p>{{b.description | truncate:150}}</p></div>
+                        <button class="yellow-button"  (click)="showBlog(b.blogId)">Click me</button>
+                                  </div>
+
+                <div>
+                    <img [src]="b.blogImages[0].url" alt="Portfolio Image" style="height: 280px; width: 280px; margin-left: 15px;">
+
+                </div>
+            
+            </div>
+            
+        </div>
+    </div>
+</main>
+          
+            <app-footer></app-footer>   <a href="blog" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

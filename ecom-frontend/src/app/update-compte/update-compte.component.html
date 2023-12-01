@@ -1,0 +1,72 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Actualizar Cuenta</h3>
+    <form (ngSubmit)="onSubmit()" #profileForm="ngForm">
+
+        
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Dirección</mat-label>
+            <input matInput placeholder="Dirección" [(ngModel)]="profile.userLastName" name="userLastName" required  minlength="9">
+            <mat-error *ngIf="profileForm.controls['userLastName'].hasError('minlength')">
+                Dirección  debe tener al menos 9 caracteres
+
+            </mat-error>
+            <mat-error *ngIf="profileForm.controls['userLastName'].hasError('required')">
+                Dirección  es obligatorio
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Número de Teléfono</mat-label>
+            <input matInput placeholder="Número de Teléfono" [(ngModel)]="profile.userFirstName" name="userFirstName" required pattern="[+0-9][0-9]*" minlength="9">
+            <mat-error *ngIf="profileForm.controls['userFirstName'].hasError('required')">
+                Numero es obligatorio
+            </mat-error>
+            <mat-error *ngIf="profileForm.controls['userFirstName'].hasError('minlength')">
+                Numero debe tener al menos 9 caracteres
+            </mat-error>
+            <mat-error *ngIf="profileForm.controls['userFirstName'].hasError('pattern')">
+                Caracteres inválidos en el número (0-9) permitidos
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" [(ngModel)]="profile.userEmail" name="userEmail" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+            <mat-error *ngIf="profileForm.controls['userEmail'].hasError('required')">
+                Email es obligatorio
+            </mat-error>
+            <mat-error *ngIf="profileForm.controls['userEmail'].hasError('pattern')">
+                Por favor, introduce una dirección de correo electrónico válida 
+            </mat-error>
+        </mat-form-field>
+       
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="text-center">
+            <button class="w-100" type="submit" [disabled]="profileForm.invalid"  mat-stroked-button color="primary">Guardar</button>
+          
+        </div>  
+    </form>
+</div>
+<app-footer></app-footer>

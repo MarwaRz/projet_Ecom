@@ -1,0 +1,54 @@
+
+            <!-- Footer Start -->
+            <div class="footer">
+                <div class="container"  *ngFor="let p of profiles">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="footer-contact">
+                                <h2>Ponerse en Contacto</h2>
+                                <p><i class="fa fa-map-marker-alt"></i>{{p.adresse}}</p>
+                                <p><i class="fa fa-phone-alt"></i>{{p.num}}</p>
+                                <p><i class="fa fa-envelope"></i>{{p.email}}</p>
+                                <div class="footer-social">
+                                    <a href="{{p.fb}}"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="{{p.youtube}}"><i class="fab fa-youtube"></i></a>
+                                    <a href="{{p.insta}}"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="footer-link">
+                                <h2>Enlace útil</h2>
+                                <a href="/sobre_nosotros">Sobre nosotros</a>
+                                <a href="/servicios">Nuestros Servicios</a>
+                                <a href="/proyectos">Nuestro Proyecto</a>
+                                <a href="/contacto">Contacto</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="map">
+                                <iframe class="position-relative"
+                                [src]="getSafeMapsUrl(p.maps)"
+                                frameborder="0" style=" height: 300px ;width: 500px;; border:0;" allowfullscreen="" aria-hidden="false"
+                                tabindex="0"></iframe>  
+                            </div>
+                        </div>
+                        
+                        <div class="container copyright">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>&copy; <a href="">ToDoClean</a>, All Right Reserved.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><a ></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+               
+              
+            </div>
+
+      

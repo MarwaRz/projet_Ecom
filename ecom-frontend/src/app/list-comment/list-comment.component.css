@@ -1,0 +1,64 @@
+table
+{
+    width: 100%;
+}
+.comment-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-header,
+.comment-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.comment-date {
+    font-size: 14px;
+    color: #888;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    color: #FFD700; /* Gold color for stars */
+    margin-right: 5px;
+}
+
+.comment-content {
+    font-size: 16px;
+    line-height: 1.5;
+}

@@ -1,0 +1,86 @@
+
+
+
+
+
+
+
+
+
+<div class="header">
+    <div class="container-fluid">
+        
+
+        <div class="hero row align-items-center">
+            <div class="col-md-7">
+                <h2>Mejor & Confiable
+                </h2>
+            <h2><span>Servicio </span> de Limpieza</h2>
+            <p>Tu Puerta de Entrada a un Espacio más Limpio y Brillante!</p>
+            </div>
+            <div class="col-md-5">
+                <div class="form">
+                    
+                    
+                    
+                    <h3>Crear una Cuenta</h3>
+
+                    <div class="hh"> 
+
+
+                    <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+                        <input class="form-control" type="text" ngModel name="userName" id="userName" required minlength="7" placeholder="Nombre de Usuario">
+                        <div *ngIf="registerForm.controls['userName'].touched">
+                          <div style="font-size: 14px; color: rgb(135, 7, 7);" *ngIf="registerForm.controls['userName'].hasError('required')">Nombre de Usuario es obligatorio</div>
+                          <div style="font-size: 14px; color: rgb(135, 7, 7);" *ngIf="registerForm.controls['userName'].hasError('minlength')">Nombre de Usuario debe tener al menos 7 caracteres</div>
+                        </div>
+
+                            <input class="form-control" type="text" ngModel name="userFirstName" id="userFirstName"    required minlength="9"  pattern="[+0-9][0-9]*"  placeholder="Número de Teléfono">
+                            <div *ngIf="registerForm.controls['userFirstName'].touched">
+
+                            <div style="font-size: 14px; color: rgb(135, 7, 7);" *ngIf="registerForm.controls['userFirstName'].hasError('required')">Número de Teléfono es obligatorio</div>
+                            <div  style="font-size: 14px; color: rgb(135, 7, 7);"  *ngIf="registerForm.controls['userFirstName'].hasError('minlength')">Número de Teléfono debe tener al menos 9 caracteres</div>  
+                            <div style="font-size: 14px; color: rgb(135, 7, 7);" *ngIf="registerForm.controls['userFirstName'].hasError('pattern')">Caracteres inválidos en el número de teléfono (0-9)</div>
+   
+                            </div>
+                       
+                
+                            <input   class="form-control" type="text" ngModel name="userLastName" id="userLastName"  required minlength="8" required placeholder="Dirección">
+                            <div *ngIf="registerForm.controls['userLastName'].touched">
+
+                            <div style="font-size: 14px; color: rgb(135, 7, 7);" *ngIf="registerForm.controls['userLastName'].hasError('required')">Dirección es obligatorio</div>
+                            <div style="font-size: 14px; color: rgb(135, 7, 7);" *ngIf="registerForm.controls['userLastName'].hasError('minlength')">Dirección debe tener al menos 8 caracteres</div>             
+                            </div>
+
+                            <input   class="form-control" type="text" ngModel name="userEmail" id="userEmail"   required  placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                            <div *ngIf="registerForm.controls['userEmail'].touched">
+
+                            <div style="font-size: 14px; color: rgb(135, 7, 7);" *ngIf="registerForm.controls['userEmail'].hasError('required')">Email es obligatorio</div>
+                            <div style="font-size: 14px; color: rgb(135, 7, 7);" *ngIf="registerForm.controls['userEmail'].hasError('pattern')">Email no válida</div>
+
+                            </div>
+
+                            <input  class="form-control"  type="password" matInput ngModel name="userPassword" id="userPassword"   required  minlength="8"   placeholder="Contraseña"  >
+                            <div *ngIf="registerForm.controls['userPassword'].touched">
+
+                            <div style="font-size: 14px; color: rgb(135, 7, 7);" *ngIf="registerForm.controls['userPassword'].hasError('required')">Contraseña es obligatorio</div>
+                            <div style="font-size: 14px; color: rgb(135, 7, 7);" *ngIf="registerForm.controls['userPassword'].hasError('minlength')">Contraseña debe tener al menos 8 caracteres</div>         
+                            </div>
+
+            <div class="text-center">
+                <button class="btn btn-block"  [disabled]="!registerForm.valid" mat-raised-button color="primary">GUARDAR</button>
+              
+            </div>
+        </form></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+
+
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

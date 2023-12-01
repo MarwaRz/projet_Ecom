@@ -1,0 +1,69 @@
+<div class="container-fluid">
+        
+
+    <div class="">
+       
+        <div class="col-md-6">
+            <div class="">
+                
+                <div class="add"> 
+
+                
+                <h3>Agregar un(a) empleado(a)</h3>
+<br>
+
+
+                <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Nombre de Usuario</mat-label>
+            <input matInput ngModel name="userName" id="userName"   required minlength="7"  placeholder="Nombre de Usuario">
+            <mat-error *ngIf="registerForm.controls['userName'].hasError('required')">Nombre de Usuario es obligatorio</mat-error>
+            <mat-error *ngIf="registerForm.controls['userName'].hasError('minlength')">Nombre de Usuario debe tener al menos 7 caracteres</mat-error>                       
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Número de Teléfono</mat-label>
+            <input matInput ngModel name="userFirstName" id="userFirstName" required minlength="9" pattern="[+0-9][0-9]*"   placeholder="Número de Teléfono">
+            <mat-error *ngIf="registerForm.controls['userFirstName'].hasError('required')"> Número de Teléfono es obligatorio</mat-error>
+            <mat-error *ngIf="registerForm.controls['userFirstName'].hasError('minlength')">Número de Teléfono debe tener al menos 9 caracteres</mat-error>      
+            <mat-error *ngIf="registerForm.controls['userFirstName'].hasError('pattern')">Caracteres inválidos en el número de teléfono (0-9)</mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Dirección</mat-label>
+            <input matInput ngModel name="userLastName" id="userLastName"   required placeholder="Dirección">
+            <mat-error *ngIf="registerForm.controls['userLastName'].hasError('required')">Dirección es obligatorio</mat-error>
+            <mat-error *ngIf="registerForm.controls['userLastName'].hasError('minlength')">Dirección debe tener al menos 8 caracteres</mat-error>             </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100" >
+            <mat-label>Email</mat-label>
+            <input matInput ngModel name="userEmail" id="userEmail"   required  placeholder="Email">
+            <mat-error *ngIf="registerForm.controls['userEmail'].hasError('required')">Email es obligatorio</mat-error>
+
+                    </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100" >
+            <mat-label>Contraseña</mat-label>
+            <input type="password" matInput ngModel name="userPassword" id="userPassword"   required  minlength="8"   placeholder="Contraseña"  >
+            <mat-error *ngIf="registerForm.controls['userPassword'].hasError('required')">Contraseña es obligatorio</mat-error>
+            <mat-error *ngIf="registerForm.controls['userPassword'].hasError('minlength')">Contraseña debe tener al menos 8 caracteres</mat-error>         
+             </mat-form-field>
+
+        <div class="text-center">
+            <button class="w-100" type="submit" [disabled]="!registerForm.valid" mat-raised-button color="primary">Guardar</button>
+          
+        </div>                
+
+    </form></div></div>
+
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+
+
+
+
+
+<a href="agregar_empleado" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

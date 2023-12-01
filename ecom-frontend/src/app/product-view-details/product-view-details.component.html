@@ -1,0 +1,57 @@
+
+
+
+
+<div class="feature">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-5">
+                <div class="section-header left">
+                    <h2>{{product.productName}}</h2> {{product.description}} 
+                </div>                            
+
+                <p>
+                    {{product.productDescription}}                </p>
+                    <button *ngIf="!isLoggedIn()" class="button-81" role="button"  (click)="devis()" >
+                      Reservar</button>
+                      <button *ngIf="isLoggedIn()" class="button-81" role="button"  (click)="devisUser()" >
+                        Reservar</button>
+            
+                      
+
+                    
+            </div>
+            <div class="col-md-7">
+                <div class="img">
+
+                <div class="row align-items-center feature-item">
+                    <div class="col-5"  *ngFor="let file of product.productImages; let i = index" (click)="changeIndex(i)"   style="margin-left: 30px;margin-top: 30px;">
+                        <div class="col-7">
+                          
+                        </div>
+                        <img [src]="file.url" alt="Feature" style="height: 250px ; width: 250px;">
+                    </div>
+                </div>
+                </div>
+            
+                
+            </div>
+
+
+        </div>
+    </div>
+   
+    <br><br>
+   
+    
+    <app-footer></app-footer>
+    </div>
+
+
+
+   
+
+
+
+

@@ -1,0 +1,155 @@
+.wrapper{
+    margin-top: -45px;
+    width : 100%;
+}
+.container-fluid{    width : 100%;
+}
+.service-item{
+    width: 300px;
+}
+.wrapper{
+    background-color: rgb(255, 255, 255);
+}
+
+
+.testimonial-items {
+    display: flex;
+    flex-direction: row;
+    overflow: auto; /* Ajoute une barre de défilement horizontale si nécessaire */
+}
+
+.testimonial-item {
+    flex: 0 0 auto; /* Empêche les éléments de redimensionner */
+    margin-right: 20px; /* Marge entre les éléments (ajustez selon vos besoins) */
+}
+
+
+ 
+
+.more {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.full-text {
+    display: none;
+}
+.btnnn{
+width: 150px;}
+
+.b1{
+    height: 425px;
+}
+.b11{
+    height: 450px;
+}
+.btn2{
+    margin-left: 55px;
+}
+.btn3{
+    margin-left: 78px;
+}
+.date{
+    font-size: 10px;
+    margin-top: -45px;
+    margin-left: 50px;
+}
+.rate{
+ 
+    margin-top: -75px;
+    margin-left: 250px;
+    width: 100%px;
+}
+.service-item {
+    width: 355px;}
+
+
+    .blog-item{
+        width: 355px;}
+
+        .lien{
+            margin-left: 500px;
+        
+        }
+
+
+
+        
+.comment-container {
+    width: calc(33.33% - 10px); /* Adjust as needed for spacing between comments */
+    margin-bottom: 10px; /* Adjust as needed for spacing between comments */
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+/* Break long words and wrap onto the next line */
+
+}
+.comment-text {
+    white-space: pre-line; /* Preserve line breaks and spaces */
+  }
+.comment-container:nth-child(3n + 1) {
+    clear: left;
+  }
+.user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Adjust as needed for spacing between rows */
+  }
+.comment-header,
+.comment-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.comment-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    color: #FFD700; /* Gold color for stars */
+    margin-right: 5px;
+}
+
+.comment-content {
+    font-size: 16px;
+    line-height: 1.5;
+}

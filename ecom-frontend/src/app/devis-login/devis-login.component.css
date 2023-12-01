@@ -1,0 +1,62 @@
+.container   {
+    background-color: rgb(255, 255, 255);
+    box-shadow:   5px 5px 5px 5px rgb(208, 206, 206);
+}
+mat-grid-tile {
+
+    border: 1px solid #eee;
+}
+
+.btn-remove-image {
+    position: absolute;
+    cursor: pointer;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: antiquewhite;
+    border-radius: 50%;
+    width: 20px;
+    height: auto;
+    text-align: center;
+}
+
+.dropzone {
+    height: 30px;
+    display: table;
+    background-color: #ffffff;
+    width: 200px;
+    border: dashed 1px #d2d0d0;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.text-wrapper{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.center{
+    text-align: center;
+}
+.butt{
+    font-size: 20px;
+    margin-top: -60px;
+width: 900px;
+height: 50px;
+box-shadow: 0px 0px 10px rgba(18, 169, 245, 0.3); /* Add a shadow with some transparency */
+}
+.somme{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:20px;
+    margin-left: 20px;
+margin-top: 30px;}
+
+
+
+.custom-input{
+    margin-top: -85px;
+    margin-left: 462px;
+    height: 58px;
+    width: 445px;
+}
+

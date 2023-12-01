@@ -1,0 +1,51 @@
+
+  
+
+
+
+  <div class="col-md-6">
+    <div class="ask"  >
+      <form (ngSubmit)="onSubmit()">
+
+        <div class="faqs">
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header">
+                        <a class="card-link " data-toggle="collapse" href="#collapseOne" >
+                          Comentario                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse " data-parent="#accordion">
+                        <div class="card-body">
+                          <mat-form-field appearance="outline" class="w-100">
+                            <input matInput 
+                            placeholder="Escribe un comentario.."
+                            [(ngModel)]="comment.comment" name="comment"
+                            required   >
+                        </mat-form-field>     
+                      
+                        <select [(ngModel)]="rateId" (change)="rate()" name="rate" class="form-select form-select-lg mb-3">
+                          <option [ngValue]="0">--Por favor, elige una opción--</option>
+                    
+                    <option [ngValue]="5">Excelente</option>
+                    <option [ngValue]="4">Perfecto</option>
+                    <option [ngValue]="3">Bueno</option>
+                    <option [ngValue]="2">Normal</option>
+                    <option [ngValue]="1">Malo</option>
+                          
+                          
+                                </select>
+                                <button class="btn btn-success" type="submit">Guardar</button>
+
+                      
+                      </div></div>
+                </div>
+            </div></div>
+          
+          
+          
+           
+
+          
+          </form></div></div>
+            
+         

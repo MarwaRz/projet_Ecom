@@ -1,0 +1,104 @@
+<div class="wrapper">
+    
+    <div class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>PONERSE EN CONTACTO </h2>
+            </div>
+            <div class="row">
+            
+                <div class="col-md-6" *ngFor="let p of profiles" >
+                    <div class="faqs">
+                        <div id="accordion">      <h6 class="text-secondary text-uppercase">Ponerse en Contacto</h6>
+                            <h2 class="mb-4">
+                                Contacto Para Cualquier Consulta</h2>
+                                <iframe class="position-relative"
+                                [src]="getSafeMapsUrl(p.maps)"
+                                frameborder="0" style="width: 1110px ; height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+                                tabindex="0"></iframe>                     </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row g-4 wow fadeInUp" data-wow-delay=".3s" *ngFor="let p of profiles">
+        <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
+            <div class="d-flex bg-light p-3 rounded contact-btn-link">
+                <div class="flex-shrink-0 d-flex align-items-center justify-content-center  rounded-circle p-3 ms-3" style="background-color: #ffc107; border-radius: 50%; width: 64px; height: 64px;">
+                    <i class="fa fa-share text-white"></i>
+                </div>
+                <div class="ms-3 contact-link">
+                    <h4 class="text-dark">Síganos</h4>
+                    <div class="d-flex justify-content-center">
+                        <a class="px-2"  href="{{p.fb}}"><i class="fab fa-facebook-f text-dark"></i></a>
+
+                        <a class="px-2" href="{{p.insta}}"><i class="fab fa-instagram text-dark"></i></a>
+
+                        <a class="px-2" href="{{p.youtube}}"><i class="fab fa-youtube text-dark"></i></a>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
+            <div class="d-flex bg-light p-3 rounded contact-btn-link">
+                <div class="d-flex align-items-center justify-content-center  rounded-circle p-3 ms-3" style="background-color: #ffc107; border-radius: 50%; width: 64px; height: 64px;">
+                    <i class="fas fa-map-marker-alt text-white"></i>
+                </div>
+                <div class="ms-3 contact-link">
+                    <h4 class="text-dark">Dirección
+                    </h4>
+                    <div class="ligne">
+                        <p class="text-dark d-inline fs-6">{{p.adresse}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
+            <div class="d-flex bg-light p-3 rounded contact-btn-link">
+                <div class="d-flex align-items-center justify-content-center rounded-circle p-3 ms-3"  style="background-color: #ffc107; border-radius: 50%; width: 64px; height: 64px;">
+                    <i class="fa fa-phone text-white"></i>
+                </div>
+                <div class="ms-3 contact-link">
+                    <h4 class="text-dark">Llámanos</h4>
+                    <p class="h5 text-dark fs-6" >{{p.num}}</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
+            <div class="d-flex bg-light p-3 rounded contact-btn-link">
+                <div class="d-flex align-items-center justify-content-center rounded-circle p-3 ms-3" style="background-color: #ffc107; border-radius: 50%; width: 64px; height: 64px;">
+                    <i class="fa fa-envelope text-white"></i>
+                </div>
+                <div class="ms-3 contact-link">
+                    <h4 class="text-dark">Correo </h4>
+                    <p class="h5 text-dark fs-6" >{{p.email}}</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+<app-footer></app-footer>
+    <a href="contacto" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+</div>    

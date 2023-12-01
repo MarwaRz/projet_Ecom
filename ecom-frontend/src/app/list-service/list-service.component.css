@@ -1,0 +1,28 @@
+.b1{
+  height: 420px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px; /* Ajustez la marge pour compenser les marges négatives ajoutées par les colonnes */
+  }
+
+  .col-lg-9 {
+    flex: 0 0 calc(33.333% - 10px); /* Chaque service prend 33.333% de la largeur avec une marge de 10px */
+    max-width: calc(33.333% - 10px);
+    margin: 5px; /* Ajoutez une marge de 5px entre chaque service */
+  }
+
+  .service-item {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .service-item img {
+    height: 210px;
+    width: 100%;
+    object-fit: cover; /* Ajustez le comportement d'ajustement de l'image selon vos besoins */
+  }
+
+  .service-item {
+    width: 355px;}

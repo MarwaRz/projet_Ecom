@@ -1,0 +1,35 @@
+
+<div class="header home">
+    <div class="container-fluid">
+        
+
+        <div class="hero row align-items-center">
+            <div class="col-md-7">
+                <h2>Mejor & Confiable
+                </h2>
+            <h2><span>Servicio </span> de Limpieza</h2>
+            <p>Tu Puerta de Entrada a un Espacio más Limpio y Brillante!</p>
+            </div>
+            <div class="col-md-5">
+                <div class="form">
+                    <h3>¡Bienvenido de nuevo!</h3>
+                    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">                   
+                             <input class="form-control" type="text" placeholder="Nombre de Usuario"  ngModel name="userName" id="userName" >
+                        <input class="form-control"  placeholder="Contraseña" type="password"  ngModel name="userPassword" id="userPassword">
+                        <h5  *ngIf="loginError" class="error-message"  style="color: rgb(108, 5, 5);font-size: 14px;">Inicio de sesión incorrecto. Por favor, inténtelo de nuevo.</h5>
+
+                        <button class="btn btn-block" type="submit">Login</button>
+                        <button class="btn btn-block" (click)="registerUser()">Crear una Cuenta</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+
+</div>
+
+
+
+

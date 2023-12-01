@@ -1,0 +1,59 @@
+
+
+
+
+
+
+
+        
+        
+
+        <div class="wrapper">
+         
+           
+            <div class="portfolio">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Visita Nuestro Proyecto en Curso</h2>
+                    </div>
+                    
+                    <div class="row portfolio-container" >
+
+
+                            
+                            <div *ngFor="let b of blogDetails"  style="margin-right: 10px;" class="col-lg-4 col-md-6  d-flex portfolio-item completed">
+                              <div class="portfolio-wrap">
+                                <figure>
+                                  <img [src]="b.blogImages[0].url" alt="Portfolio Image"  style="height: 300px ; width: 355px;" >
+                                  <a (click)="showImages(b)" class="link-preview" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                              <div class="portfolio-title" >         
+                             <a class="btn" (click)="showProjet(b.blogId)">{{b.blogName}}</a></div>
+                                </figure>
+                              </div>
+                            </div>
+                          </div>
+                        
+                       
+                        
+                  
+                </div>
+            </div>
+            <!-- Portfolio Start -->
+
+
+            <!-- Footer Start -->
+        </div>
+
+
+
+
+
+
+
+
+
+<app-footer></app-footer>
+        
+<a href="/projet" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+

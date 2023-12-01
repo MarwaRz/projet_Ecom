@@ -1,0 +1,85 @@
+<div class="container mt-5">
+    <div class="card p-2">
+        <div class="row">
+            <div class="col-6" >
+                <form #blogForm="ngForm" (ngSubmit)="addBlog(blogForm)">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Nombre del Proyecto</mat-label>
+                        <input matInput 
+                        placeholder="Nombre del Proyecto"
+                        [(ngModel)]="blog.blogName" name="blogName" required minlength="5"
+                        >
+                        <mat-error *ngIf="blogForm.controls['blogName'].hasError('required')">Nombre del  Proyecto es obligatorio</mat-error>
+                      <mat-error *ngIf="blogForm.controls['blogName'].hasError('minlength')">Nombre del Proyecto debe tener al menos 5 caracteres</mat-error>
+                    </mat-form-field>
+            
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Descripción detallada del Proyecto</mat-label>
+                        <input matInput placeholder="Descripción detallada del Proyecto"
+                        [(ngModel)]="blog.blogDescription"
+                        name="blogDescription" required minlength="20">
+                        <mat-error *ngIf="blogForm.controls['blogDescription'].hasError('required')">Descripción detallada del Proyecto es obligatoria</mat-error>
+                      <mat-error *ngIf="blogForm.controls['blogDescription'].hasError('minlength')">Descripción detallada del Proyecto debe tener al menos 20 caracteres</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Descripción general del Proyecto</mat-label>
+                        <input matInput placeholder="Description del Proyecto"
+                        [(ngModel)]="blog.description"
+                        name="description" required minlength="20">
+                        <mat-error *ngIf="blogForm.controls['description'].hasError('required')">Descripción general del Proyecto es obligatoria</mat-error>
+                      <mat-error *ngIf="blogForm.controls['description'].hasError('minlength')">Descripción general del Proyecto debe tener al menos 20 caracteres</mat-error>
+                    </mat-form-field>
+
+                    
+                    
+                    
+            
+                    <div align="end">
+                        <button type="submit" mat-stroked-button color="primary"  [disabled]="blogForm.invalid" *ngIf="isNewProduct">Agregar</button>
+                        <button type="submit" mat-stroked-button color="primary"  [disabled]="blogForm.invalid" *ngIf="!isNewProduct">modificar</button>                    </div>
+                </form>
+            
+            </div>
+
+            <div class="col-6">
+                <div>
+
+                    <div class="dropzone"
+                    appDrag 
+                    (files) = "fileDropped($event)">
+                        <div class="text-wrapper"> 
+                            <div class="center">Arrastra y Suelta una imagen o
+                                <a (click)="selectFile.click()" style="color:blueviolet;
+                                font-weight: 800;
+                                cursor: pointer;">Busca </a>una Imagen</div>
+                            </div>
+                    </div>
+
+
+                    <input multiple
+                    type="file"
+                    style="display: none;"
+                    #selectFile  
+                    value="select"
+                    (change)="onFileSelected($event)">
+                </div>
+                <div class="mt-5">
+                    <div class="row">
+                        <mat-grid-list cols="4" rowHeight="1:1">
+                            <mat-grid-tile *ngFor="let file of blog.blogImages; let i = index;">
+                                <div style="position: relative">
+                                    <span class="btn-remove-image" (click)="removeImages(i)">X</span>
+                                    <img [src]="file.url" width="100px" height="100px">
+                                </div>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer> 
+<a href="/agregar_proyecto" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

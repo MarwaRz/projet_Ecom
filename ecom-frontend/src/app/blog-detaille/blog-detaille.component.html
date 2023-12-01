@@ -1,0 +1,34 @@
+
+
+<div class="testimonial"  >
+    <div class="" >
+        <div >
+    </div></div></div>
+    
+    <div class="blog-container">
+        <div class="blog-header">
+            <div class="blog-content" style="margin-left: 30px; margin-top: 30px; display: flex; flex-wrap: wrap;">
+
+                <div *ngFor="let file of blog.blogImages; let i = index" (click)="changeIndex(i)" style="margin-right: 10px; margin-bottom: 10px;">
+                  <img [src]="file.url" alt="Feature" style="height: 250px; width: 250px;">
+                </div>
+          
+              </div>
+            <h1>{{blog.blogName}}</h1>
+            <p >Fecha de publicación: {{blog.date}}</p>
+            <p >Tipo: {{blog.type}}</p>
+
+        </div>
+        <div class="blog-content">
+            <p>
+                {{blog.description}}
+
+            </p>
+            <p>
+                {{blog.blogDescription}}
+
+            </p>
+        </div>
+    </div>
+ 
+   <app-footer></app-footer>
